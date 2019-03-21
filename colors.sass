@@ -14,16 +14,35 @@ $color-value: #ffffff #000000 #f44336 #e91e63 #9c27b0 #673ab7 #3f51b5 #2196f3 #0
         background-color: #{nth($color-value, $i)}
     .border-#{nth($color-name, $i)}, .hover-border-#{nth($color-name, $i)}:hover
         border-color: #{nth($color-value, $i)}
-    @for $j from 1 through 5
-        .text-#{nth($color-name, $i)}.lighten-#{$j}, .hover-text-#{nth($color-name, $i)}:hover.hover-lighten-#{$j}
+    @for $j from 1 through 10
+        .text-#{nth($color-name, $i)}.lighten-#{$j},
+        .hover-text-#{nth($color-name, $i)}:hover.hover-lighten-#{$j}
             color: #{color-lighten(nth($color-value, $i), $j)}
-        .bg-#{nth($color-name, $i)}.lighten-#{$j}, .hover-bg-#{nth($color-name, $i)}:hover.hover-lighten-#{$j}
+        .hover-text-#{nth($color-name, $i)}:hover.hover-text-lighten-#{$j}
+            color: #{color-lighten(nth($color-value, $i), $j)} !important
+        .bg-#{nth($color-name, $i)}.lighten-#{$j}, 
+        .hover-bg-#{nth($color-name, $i)}:hover.hover-lighten-#{$j}
             background-color: #{color-lighten(nth($color-value, $i), $j)}
-        .border-#{nth($color-name, $i)}.lighten-#{$j}, .hover-border-#{nth($color-name, $i)}:hover.hover-lighten-#{$j}
+        .hover-bg-#{nth($color-name, $i)}:hover.hover-bg-lighten-#{$j}
+            background-color: #{color-lighten(nth($color-value, $i), $j)} !important
+        .border-#{nth($color-name, $i)}.lighten-#{$j},
+        .hover-border-#{nth($color-name, $i)}:hover.hover-lighten-#{$j}
             border-color: #{color-lighten(nth($color-value, $i), $j)}
-        .text-#{nth($color-name, $i)}.darken-#{$j}, .hover-text-#{nth($color-name, $i)}:hover.hover-darken-#{$j}
+        .hover-border-#{nth($color-name, $i)}:hover.hover-border-lighten-#{$j}
+            border-color: #{color-lighten(nth($color-value, $i), $j)}
+
+        .text-#{nth($color-name, $i)}.darken-#{$j},
+        .hover-text-#{nth($color-name, $i)}:hover.hover-darken-#{$j}
             color: #{color-darken(nth($color-value, $i), $j)}
-        .bg-#{nth($color-name, $i)}.darken-#{$j}, .hover-bg-#{nth($color-name, $i)}:hover.hover-darken-#{$j}
+        .hover-text-#{nth($color-name, $i)}:hover.hover-text-darken-#{$j}
+            color: #{color-darken(nth($color-value, $i), $j)} !important
+        .bg-#{nth($color-name, $i)}.darken-#{$j},
+        .hover-bg-#{nth($color-name, $i)}:hover.hover-darken-#{$j}
             background-color: #{color-darken(nth($color-value, $i), $j)}
-        .border-#{nth($color-name, $i)}.darken-#{$j}, .hover-border-#{nth($color-name, $i)}:hover.hover-darken-#{$j}
+        .hover-bg-#{nth($color-name, $i)}:hover.hover-bg-darken-#{$j}
+            background-color: #{color-darken(nth($color-value, $i), $j)} !important
+        .border-#{nth($color-name, $i)}.darken-#{$j},
+        .hover-border-#{nth($color-name, $i)}:hover.hover-darken-#{$j}
             border-color: #{color-darken(nth($color-value, $i), $j)}
+        .hover-border-#{nth($color-name, $i)}:hover.hover-border-darken-#{$j}
+            border-color: #{color-darken(nth($color-value, $i), $j)} !important
